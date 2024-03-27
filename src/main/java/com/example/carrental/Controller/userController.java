@@ -19,9 +19,7 @@ import com.example.carrental.Service.UserService;
 @RestController
 @Transactional
 public class userController {
-	
-<<<<<<< Updated upstream
-=======
+
 	private UserService service;
 	
 	@Autowired
@@ -51,7 +49,6 @@ public class userController {
 	public User editUser(@RequestBody User usr){
 		return service.editUser(usr);
 	}
-	
->>>>>>> Stashed changes
+
 	
 }
