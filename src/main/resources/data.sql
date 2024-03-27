@@ -1,0 +1,1 @@
+INSERT INTO `user` (`id`, `email`, `first_name`, `last_name`, `password`, `phone`, `user_name`, `access_key_id`, `credit_card_id`) VALUES (NULL, 'vasu@gmail.com', 'vasu', 'vekaria', 'vasu', '226655565', 'vasu', NULL, NULL);
