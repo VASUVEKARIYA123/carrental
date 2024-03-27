@@ -1,5 +1,7 @@
 package com.example.carrental.Entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -36,16 +38,25 @@ public class Car {
 	@JoinColumn(name = "car_package_id")
 	private CarPackage carPackage;
 	
+	public CarPackage getCarPackage() {
+		return carPackage;
+	}
+
+	public void setCarPackage(CarPackage carPackage) {
+		this.carPackage = carPackage;
+	}
+
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "car_parameter_id")
+	
 	private CarParameters carParameters;
 
 	public Long getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setId(Long i) {
+		this.id = i;
 	}
 
 	public String getRegistrationNo() {
@@ -88,7 +99,9 @@ public class Car {
 		this.carParameters = carParameters;
 	}
 
-	public Car(Long id, String registrationNo, String brand, String model, Boolean isAvailable,
+	
+
+	public Car(Long id, String registrationNo, String brand, String model, Boolean isAvailable, CarPackage carPackage,
 			CarParameters carParameters) {
 		super();
 		this.id = id;
@@ -96,6 +109,7 @@ public class Car {
 		this.brand = brand;
 		this.model = model;
 		this.isAvailable = isAvailable;
+		this.carPackage = carPackage;
 		this.carParameters = carParameters;
 	}
 

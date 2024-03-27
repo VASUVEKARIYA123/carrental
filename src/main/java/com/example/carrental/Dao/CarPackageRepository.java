@@ -6,4 +6,5 @@ import com.example.carrental.Entity.CarPackage;
 
 public interface  CarPackageRepository extends JpaRepository<CarPackage,Long>{
 
+	
 }
