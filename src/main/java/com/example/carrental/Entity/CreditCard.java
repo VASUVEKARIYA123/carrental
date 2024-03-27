@@ -33,8 +33,8 @@ public class CreditCard {
 	@Column(name = "account_balance", nullable = false)
 	private Long accountBalance;
 	
-	@OneToOne(mappedBy = "creditCard", cascade = CascadeType.ALL)
-	private User user;
+//	@OneToOne(mappedBy = "creditCard", cascade = CascadeType.ALL)
+//	private User user;
 	
 	public Long getId() {
 		return id;
@@ -48,8 +48,7 @@ public class CreditCard {
 		return cardNumber;
 	}
 
-	public CreditCard(Long id, Long cardNumber, Integer month, Integer year, Integer cvv, Long accountBalance,
-			User user) {
+	public CreditCard(Long id, Long cardNumber, Integer month, Integer year, Integer cvv, Long accountBalance) {
 		super();
 		this.id = id;
 		this.cardNumber = cardNumber;
@@ -57,7 +56,11 @@ public class CreditCard {
 		this.year = year;
 		this.cvv = cvv;
 		this.accountBalance = accountBalance;
-		this.user = user;
+//		this.user = user;
+	}
+	
+	public CreditCard() {
+		super();
 	}
 
 	@Override
@@ -102,13 +105,13 @@ public class CreditCard {
 		this.accountBalance = accountBalance;
 	}
 
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
+//	public User getUser() {
+//		return user;
+//	}
+//
+//	public void setUser(User user) {
+//		this.user = user;
+//	}
 
 	
 	

@@ -4,22 +4,26 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.example.carrental.Entity.User;
+import com.example.carrental.Dao.CreditCardRepository;
 import com.example.carrental.Dao.UserRepository;
 
 @Service
 public class UserService {
 	
-	@Autowired
-	UserRepository repo;
+	private UserRepository repo;
+	private CreditCardRepository cardRepo;
 	
-	public UserService(UserRepository repo) {
+	@Autowired
+	public UserService(@Qualifier("userRepository")UserRepository theRepo,@Qualifier("creditCardRepository")CreditCardRepository theCardRepo) {
 		super();
-		this.repo = repo;
+		repo = theRepo;
+		cardRepo = theCardRepo;
 	}
 
 	public List<User> findAll(){
