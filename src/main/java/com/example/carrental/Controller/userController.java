@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.carrental.Entity.User;
@@ -17,7 +18,7 @@ import com.example.carrental.Service.UserService;
 
 
 @RestController
-@Transactional
+@RequestMapping("/api")
 public class userController {
 
 	private UserService service;

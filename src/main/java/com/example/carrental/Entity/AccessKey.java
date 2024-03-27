@@ -24,7 +24,7 @@ public class AccessKey {
 	@Column(name = "hours", nullable = false)
 	private Integer hours;
 	
-	@OneToOne(mappedBy = "accesskey", cascade = CascadeType.ALL)
+	@OneToOne(mappedBy = "accesskey")
 	private User user;
 
 	public Long getId() {

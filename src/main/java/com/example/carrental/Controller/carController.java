@@ -17,6 +17,8 @@ import com.example.carrental.Entity.Car;
 import com.example.carrental.Entity.CarPackage;
 import com.example.carrental.Service.CarService;
 
+import jakarta.transaction.Transactional;
+
 @RestController
 @RequestMapping("/api")
 public class carController {
